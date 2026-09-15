@@ -1,26 +1,285 @@
 @import "tailwindcss";
 
+/*
+  Brand palette from current Alliance OB/GYN site (Elementor kit):
+  primary #89140A, secondary #000000, text #666666, accent #E5E5E5, highlight #FFBC7D
+  CSS token names (teal/sand) are kept so existing utility classes keep working.
+*/
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ink: #111111;
+  --ink-soft: #666666;
+  --paper: #f7f5f4;
+  --paper-deep: #efe8e6;
+  --teal: #89140a;
+  --teal-deep: #6b0f08;
+  --teal-soft: #f3e6e4;
+  --sand: #ffbc7d;
+  --sand-deep: #c47a3a;
+  --white: #ffffff;
+  --line: rgba(17, 17, 17, 0.1);
+  --shadow: 0 18px 50px rgba(17, 17, 17, 0.12);
+  --background: var(--paper);
+  --foreground: var(--ink);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-paper: var(--paper);
+  --color-paper-deep: var(--paper-deep);
+  --color-teal: var(--teal);
+  --color-teal-deep: var(--teal-deep);
+  --color-teal-soft: var(--teal-soft);
+  --color-sand: var(--sand);
+  --color-sand-deep: var(--sand-deep);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--paper);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+::selection {
+  background: var(--teal-soft);
+  color: var(--teal-deep);
+}
+
+.font-display {
+  font-family: var(--font-display), Poppins, "Segoe UI", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.site-shell {
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(ellipse 90% 60% at 8% 0%, rgba(137, 20, 10, 0.07), transparent 55%),
+    radial-gradient(ellipse 70% 50% at 92% 0%, rgba(255, 188, 125, 0.14), transparent 50%),
+    linear-gradient(180deg, #faf8f7 0%, #f7f5f4 50%, #f3eeec 100%);
+  min-height: 100%;
+}
+
+.texture-panel {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(243, 230, 228, 0.7)),
+    repeating-linear-gradient(
+      -12deg,
+      transparent,
+      transparent 11px,
+      rgba(137, 20, 10, 0.035) 11px,
+      rgba(137, 20, 10, 0.035) 12px
+    );
+}
+
+/*
+  Full-bleed section surfaces.
+  Gradients are sized to the SECTION (not the page), so atmosphere fills the whole block.
+*/
+.surface-paper {
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(ellipse 85% 70% at 12% 0%, rgba(137, 20, 10, 0.08), transparent 60%),
+    radial-gradient(ellipse 70% 55% at 88% 100%, rgba(255, 188, 125, 0.16), transparent 55%),
+    linear-gradient(180deg, #faf8f7 0%, #f7f5f4 45%, #f3eeec 100%);
+}
+
+.surface-white {
+  background-color: var(--white);
+  background-image:
+    radial-gradient(ellipse 80% 60% at 90% 0%, rgba(255, 188, 125, 0.1), transparent 55%),
+    radial-gradient(ellipse 70% 50% at 10% 100%, rgba(137, 20, 10, 0.04), transparent 55%),
+    linear-gradient(180deg, #ffffff 0%, #fcfbfa 100%);
+}
+
+.surface-soft {
+  background-color: var(--teal-soft);
+  background-image:
+    radial-gradient(ellipse 90% 70% at 15% 20%, rgba(255, 255, 255, 0.55), transparent 55%),
+    radial-gradient(ellipse 80% 60% at 85% 80%, rgba(255, 188, 125, 0.22), transparent 55%),
+    linear-gradient(160deg, #f7ebe9 0%, #f3e6e4 50%, #efe0dd 100%);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+  letter-spacing: 0.01em;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: var(--teal);
+  color: white;
+  padding: 0.85rem 1.35rem;
+  box-shadow: none;
+}
+
+.btn-primary:hover {
+  background: var(--teal-deep);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--teal-deep);
+  border: 1px solid rgba(137, 20, 10, 0.22);
+  padding: 0.85rem 1.35rem;
+}
+
+.btn-secondary:hover {
+  background: white;
+}
+
+.btn-sand {
+  background: var(--ink);
+  color: white;
+  padding: 0.85rem 1.35rem;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
+.btn-sand:hover {
+  background: #2a2a2a;
+}
+
+.pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 9999px;
+  line-height: 1.35;
+  min-height: 2.75rem;
+  padding: 0.625rem 1rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 9999px;
+  line-height: 1.35;
+  min-height: 2.25rem;
+  padding: 0.5rem 1rem;
+}
+
+/*
+  Section spacing:
+  - section-pad: first / standalone content sections
+  - section-follow: subsequent sections (no top pad — previous section’s bottom pad is the gap)
+  - section-panel: wraps an inset panel (texture card, CTA banner) so space above/below the
+    visible panel edge stays equal, independent of inner panel padding
+*/
+.section-pad {
+  padding: 3.5rem 1.25rem;
+}
+
+.section-follow {
+  padding: 0 1.25rem 3.5rem;
+}
+
+.section-panel {
+  padding: 2.5rem 1.25rem;
+}
+
+.section-hero {
+  padding: 3.5rem 1.25rem 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-pad {
+    padding: 4.5rem 1.5rem;
+  }
+
+  .section-follow {
+    padding: 0 1.5rem 4.5rem;
+  }
+
+  .section-panel {
+    padding: 3rem 1.5rem;
+  }
+
+  .section-hero {
+    padding: 4.5rem 1.5rem 2.5rem;
+  }
+}
+
+.container-site {
+  width: min(1120px, 100%);
+  margin-inline: auto;
+}
+
+.fade-up,
+.fade-up-delay,
+.fade-up-delay-2 {
+  opacity: 1;
+}
+
+.fade-up {
+  animation: fadeUp 700ms ease both;
+}
+
+.fade-up-delay {
+  animation: fadeUp 900ms ease 120ms both;
+}
+
+.fade-up-delay-2 {
+  animation: fadeUp 1000ms ease 220ms both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up,
+  .fade-up-delay,
+  .fade-up-delay-2,
+  .btn:hover {
+    animation: none;
+    transform: none;
+  }
 }
