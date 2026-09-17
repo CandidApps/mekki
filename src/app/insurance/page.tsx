@@ -18,7 +18,7 @@ export default function InsurancePage() {
         title="Accepted Insurance Plans"
         description={site.insuranceNote}
       />
-      <section className="section-pad pt-0">
+      <section className="section-pad pt-0 surface-white">
         <div className="container-site max-w-3xl space-y-6">
           <div className="rounded-[1.75rem] border border-[var(--line)] bg-white p-8">
             <h2 className="font-display text-2xl text-ink">Before you schedule</h2>

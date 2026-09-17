@@ -18,7 +18,7 @@ export default function FibroidsPage() {
         title="Fibroid Evaluation & Treatment in Libertyville"
         description="Uterine fibroids can cause heavy bleeding, pelvic pressure, pain, or fertility concerns. Dr. Yasir A. Mekki provides diagnosis and individualized treatment, including gynecologic surgery when needed."
       />
-      <section className="section-pad pt-0">
+      <section className="section-pad pt-0 surface-white">
         <div className="container-site max-w-3xl space-y-5 text-ink-soft">
           <p>
             Fibroids are common noncancerous uterine growths. Some cause few symptoms; others

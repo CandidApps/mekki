@@ -5,6 +5,18 @@ import { site } from "@/lib/site";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
+const visitReasons = [
+  "Annual wellness exam",
+  "Pregnancy / new OB visit",
+  "Gynecology concern",
+  "Birth control consultation",
+  "Menopause care",
+  "Procedure or surgery consultation",
+  "Other / not sure",
+];
+
+const providers = ["First Available", "Dr. Mekki", "Kelsey, NP", "No Preference"];
+
 export function AppointmentForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [message, setMessage] = useState("");
@@ -17,6 +29,17 @@ export function AppointmentForm() {
     setStatus("submitting");
     setMessage("");
 
+    const visitReason = String(data.get("visitReason") || "");
+    const details = String(data.get("reason") || "").trim();
+    const preferredProvider = String(data.get("preferredProvider") || "");
+    const combinedReason = [
+      visitReason ? `Visit type: ${visitReason}` : "",
+      preferredProvider ? `Preferred provider: ${preferredProvider}` : "",
+      details ? `Details: ${details}` : "",
+    ]
+      .filter(Boolean)
+      .join("\n");
+
     try {
       const response = await fetch("/api/appointment", {
         method: "POST",
@@ -27,7 +50,8 @@ export function AppointmentForm() {
           dob: data.get("dob"),
           phone: data.get("phone"),
           email: data.get("email"),
-          reason: data.get("reason"),
+          reason: combinedReason || details,
+          preferredProvider,
           website: data.get("website"),
         }),
       });
@@ -42,7 +66,9 @@ export function AppointmentForm() {
 
       form.reset();
       setStatus("success");
-      setMessage("Thank you — your appointment request was sent. We will respond within 24 hours.");
+      setMessage(
+        "Thank you — your appointment request was sent. A member of our care team will contact you to confirm a date and time.",
+      );
     } catch {
       setStatus("error");
       setMessage(`Unable to send right now. Please call ${site.phone} or email ${site.email}.`);
@@ -55,16 +81,16 @@ export function AppointmentForm() {
       onSubmit={onSubmit}
       className="h-fit w-full rounded-[1.75rem] border border-[var(--line)] bg-white p-6 shadow-[var(--shadow)] md:p-8"
     >
-      <h2 className="font-display text-3xl text-ink">Request an Appointment</h2>
+      <h2 className="font-display text-3xl text-ink">Tell us how we can help</h2>
       <p className="mt-2 text-ink-soft">
-        We aim to respond within 24 hours. For urgent matters, call{" "}
+        Share your preferences below. A member of our care team will contact you to confirm a date
+        and time. Please do not include urgent or sensitive medical details — call{" "}
         <a className="font-semibold text-teal" href={site.phoneHref}>
           {site.phone}
-        </a>
-        .
+        </a>{" "}
+        for prompt guidance.
       </p>
 
-      {/* Honeypot field — hidden from users */}
       <div aria-hidden="true" className="absolute left-[-10000px] h-0 w-0 overflow-hidden">
         <label>
           Website
@@ -86,26 +112,58 @@ export function AppointmentForm() {
           <input required name="dob" type="date" className="rounded-xl border border-[var(--line)] px-3 py-3" />
         </label>
         <label className="grid gap-1 text-sm">
+          <span className="font-medium">Preferred provider</span>
+          <select
+            name="preferredProvider"
+            defaultValue="First Available"
+            className="rounded-xl border border-[var(--line)] bg-white px-3 py-3"
+          >
+            {providers.map((provider) => (
+              <option key={provider} value={provider}>
+                {provider}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label className="grid gap-1 text-sm md:col-span-2">
+          <span className="font-medium">Reason for visit</span>
+          <select
+            required
+            name="visitReason"
+            defaultValue=""
+            className="rounded-xl border border-[var(--line)] bg-white px-3 py-3"
+          >
+            <option value="" disabled>
+              Select a reason
+            </option>
+            {visitReasons.map((reason) => (
+              <option key={reason} value={reason}>
+                {reason}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label className="grid gap-1 text-sm">
           <span className="font-medium">Phone</span>
           <input required name="phone" type="tel" className="rounded-xl border border-[var(--line)] px-3 py-3" />
         </label>
-        <label className="grid gap-1 text-sm md:col-span-2">
+        <label className="grid gap-1 text-sm">
           <span className="font-medium">Email</span>
           <input required name="email" type="email" className="rounded-xl border border-[var(--line)] px-3 py-3" />
         </label>
         <label className="grid gap-1 text-sm md:col-span-2">
-          <span className="font-medium">Reason for appointment</span>
-          <textarea
-            required
-            name="reason"
-            rows={4}
-            className="rounded-xl border border-[var(--line)] px-3 py-3"
-          />
+          <span className="font-medium">Anything else we should know? (optional)</span>
+          <textarea name="reason" rows={3} className="rounded-xl border border-[var(--line)] px-3 py-3" />
         </label>
       </div>
 
+      <p className="mt-4 text-sm text-ink-soft">
+        Submitting a request does not confirm an appointment. Our team will contact you to finalize
+        scheduling.
+      </p>
+
       <button type="submit" className="btn btn-primary mt-6" disabled={status === "submitting"}>
-        {status === "submitting" ? "Sending…" : "Submit Request"}
+        {status === "submitting" ? "Sending…" : "Continue Request"}
       </button>
 
       {message ? (

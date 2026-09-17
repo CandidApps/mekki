@@ -39,7 +39,7 @@ export default function ObstetricsPage() {
         ctaLabel="Schedule a Pregnancy Appointment"
       />
 
-      <section className="section-pad pt-0">
+      <section className="section-pad pt-0 surface-white">
         <div className="container-site grid gap-8 lg:grid-cols-2">
           <div className="space-y-4 text-ink-soft">
             <p>
@@ -76,7 +76,7 @@ export default function ObstetricsPage() {
         </div>
       </section>
 
-      <section className="section-pad pt-0">
+      <section className="section-pad surface-paper">
         <div className="container-site">
           <h2 className="font-display text-3xl text-ink">What prenatal care includes</h2>
           <div className="mt-6 grid gap-4 md:grid-cols-3">

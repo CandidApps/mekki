@@ -18,7 +18,7 @@ export default function PrivacyPage() {
         ctaHref="/contact"
         ctaLabel="Contact the Office"
       />
-      <section className="section-pad pt-0">
+      <section className="section-pad pt-0 surface-white">
         <div className="container-site max-w-3xl space-y-4 text-ink-soft">
           <p>
             This website may collect limited contact information when you request an appointment or

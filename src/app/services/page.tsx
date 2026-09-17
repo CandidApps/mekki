@@ -99,7 +99,7 @@ export default function ServicesPage() {
         title="Obstetrics and Gynecology Services in Libertyville"
         description="Comprehensive OB/GYN, pregnancy care, women’s health, and gynecologic surgery with Dr. Yasir A. Mekki — serving Libertyville and Lake County."
       />
-      <section className="section-pad pt-0">
+      <section className="section-pad pt-0 surface-white">
         <div className="container-site grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
             <Link

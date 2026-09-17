@@ -20,7 +20,7 @@ export default function ProvidersPage() {
         description="Board certified obstetrics and gynecology care in Libertyville, led by an experienced physician and supported by a dedicated nurse practitioner."
       />
 
-      <section className="section-pad pt-0">
+      <section className="section-pad pt-0 surface-white">
         <div className="container-site grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="overflow-hidden rounded-[2rem] shadow-[var(--shadow)]">
             <Image
@@ -92,7 +92,7 @@ export default function ProvidersPage() {
         </div>
       </section>
 
-      <section className="section-pad pt-0">
+      <section className="section-pad surface-paper">
         <div className="container-site grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="overflow-hidden rounded-[2rem] shadow-[var(--shadow)]">
             <Image

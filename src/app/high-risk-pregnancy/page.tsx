@@ -34,7 +34,7 @@ export default function HighRiskPregnancyPage() {
         ctaLabel="Schedule a Pregnancy Appointment"
       />
 
-      <section className="section-pad pt-0">
+      <section className="section-pad pt-0 surface-white">
         <div className="container-site grid gap-8 lg:grid-cols-2">
           <div className="space-y-4 text-ink-soft">
             <p>

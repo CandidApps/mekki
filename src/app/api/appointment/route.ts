@@ -10,6 +10,7 @@ type AppointmentPayload = {
   phone?: string;
   email?: string;
   reason?: string;
+  preferredProvider?: string;
   website?: string; // honeypot
 };
 
@@ -37,6 +38,7 @@ export async function POST(request: Request) {
   const phone = clean(body.phone);
   const email = clean(body.email);
   const reason = clean(body.reason);
+  const preferredProvider = clean(body.preferredProvider);
 
   if (!firstName || !lastName || !dob || !phone || !email || !reason) {
     return Response.json({ error: "Please fill out all required fields." }, { status: 400 });
@@ -67,10 +69,13 @@ export async function POST(request: Request) {
     `Date of birth: ${dob}`,
     `Phone: ${phone}`,
     `Email: ${email}`,
+    preferredProvider ? `Preferred provider: ${preferredProvider}` : "",
     "",
     "Reason for appointment:",
     reason,
-  ].join("\n");
+  ]
+    .filter((line, index, arr) => !(line === "" && arr[index - 1] === ""))
+    .join("\n");
 
   const { error } = await resend.emails.send({
     from,

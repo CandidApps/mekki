@@ -19,7 +19,7 @@ export default function PatientResourcesPage() {
         title="Prepare for Your OB/GYN Visit"
         description="Helpful guidance for prenatal care schedules, gynecology appointments, and online paperwork at Alliance OB/GYN in Libertyville."
       />
-      <section className="section-pad pt-0">
+      <section className="section-pad pt-0 surface-white">
         <div className="container-site grid gap-6 lg:grid-cols-2">
           <article className="rounded-[1.75rem] border border-[var(--line)] bg-white p-6">
             <h2 className="font-display text-2xl text-ink">Prenatal appointment schedule</h2>

@@ -20,7 +20,7 @@ export default function AboutPage() {
         description="Alliance OB/GYN is the Libertyville practice of Dr. Yasir A. Mekki — a board certified obstetrician gynecologist and experienced gynecologic surgeon who has cared for women and families in Lake County since 1998."
       />
 
-      <section className="section-pad pt-0">
+      <section className="section-pad pt-0 surface-white">
         <div className="container-site grid gap-10 lg:grid-cols-2">
           <div className="space-y-5 text-lg text-ink-soft">
             <p>
@@ -64,7 +64,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-pad pt-0">
+      <section className="section-pad surface-paper">
         <div className="container-site rounded-[2rem] bg-teal-deep px-6 py-10 text-white md:px-10">
           <h2 className="font-display text-3xl">Hospital affiliations</h2>
           <p className="mt-3 max-w-3xl text-white/80">

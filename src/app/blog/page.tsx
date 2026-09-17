@@ -19,7 +19,7 @@ export default function BlogPage() {
         title="Women’s Health & Wellness Articles"
         description="Practical guidance on obstetrics, gynecology, and surgical questions patients search for — written for Libertyville and Lake County families."
       />
-      <section className="section-pad pt-0">
+      <section className="section-pad pt-0 surface-white">
         <div className="container-site grid gap-5 md:grid-cols-2">
           {blogPosts.map((post) => (
             <article
