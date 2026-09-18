@@ -115,14 +115,14 @@ export default function MenopausePage() {
       />
 
       <section className="section-pad pt-0 surface-white">
-        <div className="container-site max-w-3xl">
+        <div className="container-site">
           <p className="text-sm font-semibold tracking-[0.16em] text-teal uppercase">
             Your experience is personal
           </p>
           <h2 className="font-display mt-2 text-3xl text-ink">
             There is no “right” way to feel during menopause
           </h2>
-          <p className="mt-4 text-ink-soft">
+          <p className="mt-4 max-w-3xl text-ink-soft">
             Some women have few symptoms. Others experience changes that affect sleep, work,
             relationships, intimacy, or emotional well-being. Both experiences are valid.
           </p>
@@ -229,21 +229,23 @@ export default function MenopausePage() {
       </section>
 
       <section className="section-pad surface-white">
-        <div className="container-site max-w-3xl rounded-[1.75rem] border border-teal/20 bg-teal-soft/40 p-6 md:p-8">
-          <p className="text-sm font-semibold tracking-[0.16em] text-teal uppercase">
-            Please do not ignore bleeding changes
-          </p>
-          <h2 className="font-display mt-2 text-3xl text-ink">
-            Bleeding after menopause should be evaluated
-          </h2>
-          <p className="mt-4 text-ink-soft">
-            Periods often change during perimenopause, but heavy bleeding, bleeding between periods,
-            or any bleeding after 12 months without a period deserves a conversation with your
-            OB/GYN.
-          </p>
-          <Link href="/abnormal-bleeding" className="btn btn-primary mt-6">
-            Request an Evaluation
-          </Link>
+        <div className="container-site">
+          <div className="rounded-[1.75rem] border border-teal/20 bg-teal-soft/40 p-6 md:p-8">
+            <p className="text-sm font-semibold tracking-[0.16em] text-teal uppercase">
+              Please do not ignore bleeding changes
+            </p>
+            <h2 className="font-display mt-2 text-3xl text-ink">
+              Bleeding after menopause should be evaluated
+            </h2>
+            <p className="mt-4 max-w-3xl text-ink-soft">
+              Periods often change during perimenopause, but heavy bleeding, bleeding between periods,
+              or any bleeding after 12 months without a period deserves a conversation with your
+              OB/GYN.
+            </p>
+            <Link href="/abnormal-bleeding" className="btn btn-primary mt-6">
+              Request an Evaluation
+            </Link>
+          </div>
         </div>
       </section>
 

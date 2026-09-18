@@ -28,18 +28,6 @@ export function PracticeJsonLd() {
             opens: "08:00",
             closes: "18:00",
           },
-          {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: "Wednesday",
-            opens: "08:00",
-            closes: "15:00",
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: "Friday",
-            opens: "08:00",
-            closes: "13:00",
-          },
         ],
         medicalSpecialty: ["Obstetric", "Gynecologic"],
         areaServed: ["Libertyville, IL", "Lake County, IL"],
@@ -75,7 +63,7 @@ export function PracticeJsonLd() {
             name: "What languages does Dr. Mekki speak?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Dr. Yasir A. Mekki speaks English, Arabic, and Spanish.",
+              text: "Dr. Yasir A. Mekki speaks English, Arabic, and Spanish — including Spanish for patients and families who prefer care in Spanish.",
             },
           },
           {

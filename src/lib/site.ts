@@ -7,7 +7,7 @@ export const site = {
     credentials: "M.D.",
     title: "Board Certified Obstetrician Gynecologist",
     surgeonTitle: "Experienced Gynecologic Surgeon",
-    languages: ["English", "Arabic", "Spanish"] as const,
+    languages: ["Spanish", "Arabic", "English"] as const,
     languagesNote: "Also familiar with French",
     yearsExperience: "39+",
     practiceSince: 1998,
@@ -39,11 +39,15 @@ export const site = {
   hours: [
     { day: "Monday", time: "8:00 AM – 6:00 PM" },
     { day: "Tuesday", time: "8:00 AM – 6:00 PM" },
-    { day: "Wednesday", time: "8:00 AM – 3:00 PM" },
+    { day: "Wednesday", time: "Closed" },
     { day: "Thursday", time: "8:00 AM – 6:00 PM" },
-    { day: "Friday", time: "8:00 AM – 1:00 PM" },
+    { day: "Friday", time: "Closed" },
     { day: "Saturday – Sunday", time: "Closed" },
   ],
+  /** Dr. Mekki sees patients in the Libertyville office these days */
+  doctorInOfficeDays: "Monday, Tuesday, and Thursday",
+  doctorInOfficeNote:
+    "Dr. Mekki is in the Libertyville office Monday, Tuesday, and Thursday. Call to schedule with Dr. Mekki or Kelsey Augusta, FNP-C.",
   hospitals: [
     "Northwestern Medicine Lake Forest Hospital",
     "Vista Medical Center East",

@@ -19,18 +19,20 @@ export default function FibroidsPage() {
         description="Uterine fibroids can cause heavy bleeding, pelvic pressure, pain, or fertility concerns. Dr. Yasir A. Mekki provides diagnosis and individualized treatment, including gynecologic surgery when needed."
       />
       <section className="section-pad pt-0 surface-white">
-        <div className="container-site max-w-3xl space-y-5 text-ink-soft">
-          <p>
-            Fibroids are common noncancerous uterine growths. Some cause few symptoms; others
-            disrupt daily life. Evaluation often includes pelvic exam and ultrasound to understand
-            size, number, and location.
-          </p>
-          <p>
-            Treatment may include observation, medication, procedures, or surgery depending on
-            symptoms and pregnancy goals. When surgery is appropriate, minimally invasive options
-            may be considered.
-          </p>
-          <div className="flex flex-wrap gap-3">
+        <div className="container-site">
+          <div className="max-w-3xl space-y-5 text-ink-soft">
+            <p>
+              Fibroids are common noncancerous uterine growths. Some cause few symptoms; others
+              disrupt daily life. Evaluation often includes pelvic exam and ultrasound to understand
+              size, number, and location.
+            </p>
+            <p>
+              Treatment may include observation, medication, procedures, or surgery depending on
+              symptoms and pregnancy goals. When surgery is appropriate, minimally invasive options
+              may be considered.
+            </p>
+          </div>
+          <div className="mt-6 flex flex-wrap gap-3">
             <Link href="/gynecologic-surgery" className="btn btn-secondary">
               Gynecologic Procedures and Surgeries
             </Link>

@@ -115,14 +115,14 @@ export default function GynecologyPage() {
       />
 
       <section className="section-pad pt-0 surface-white">
-        <div className="container-site max-w-3xl">
+        <div className="container-site">
           <p className="text-sm font-semibold tracking-[0.16em] text-teal uppercase">
             Your concern is enough
           </p>
           <h2 className="font-display mt-2 text-3xl text-ink">
             You do not need to wait until something feels unbearable
           </h2>
-          <p className="mt-4 text-ink-soft">
+          <p className="mt-4 max-w-3xl text-ink-soft">
             Periods that interrupt your life, pelvic discomfort, changes in your body, questions
             about birth control, or simply wanting to stay well are all valid reasons to make an
             appointment. We meet you where you are.

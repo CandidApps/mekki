@@ -103,14 +103,14 @@ export default function PreconceptionPage() {
       />
 
       <section className="section-pad pt-0 surface-white">
-        <div className="container-site max-w-3xl">
+        <div className="container-site">
           <p className="text-sm font-semibold tracking-[0.16em] text-teal uppercase">
             You do not need a perfect plan
           </p>
           <h2 className="font-display mt-2 text-3xl text-ink">
             Come with your questions — not all the answers
           </h2>
-          <p className="mt-4 text-ink-soft">
+          <p className="mt-4 max-w-3xl text-ink-soft">
             Every path to pregnancy is different. We focus on what is relevant to your health, your
             timing, and your goals without judgment or pressure.
           </p>
@@ -118,14 +118,14 @@ export default function PreconceptionPage() {
       </section>
 
       <section className="section-pad surface-paper">
-        <div className="container-site max-w-3xl">
+        <div className="container-site">
           <p className="text-sm font-semibold tracking-[0.16em] text-teal uppercase">
             A healthy beginning starts with you
           </p>
           <h2 className="font-display mt-2 text-3xl text-ink">
             Preconception care is care for your whole health
           </h2>
-          <p className="mt-4 text-ink-soft">
+          <p className="mt-4 max-w-3xl text-ink-soft">
             A visit before pregnancy gives us time to review health concerns that may affect
             pregnancy, make sure your current care still fits your needs, and discuss changes that
             could be helpful before you begin trying to conceive.
@@ -218,24 +218,26 @@ export default function PreconceptionPage() {
       </section>
 
       <section className="section-pad surface-white">
-        <div className="container-site max-w-3xl rounded-[1.75rem] border border-teal/20 bg-teal-soft/40 p-6 md:p-8">
-          <p className="text-sm font-semibold tracking-[0.16em] text-teal uppercase">
-            Already have a positive pregnancy test?
-          </p>
-          <h2 className="font-display mt-2 text-3xl text-ink">
-            You did not miss your chance to prepare
-          </h2>
-          <p className="mt-4 text-ink-soft">
-            Contact our office to arrange prenatal care. Keep taking prescribed medication unless
-            your clinician advises otherwise, and bring your questions to your first visit.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/obstetrics" className="btn btn-primary">
-              Request a Prenatal Visit
-            </Link>
-            <Link href="/infertility" className="btn btn-secondary">
-              Fertility Concerns
-            </Link>
+        <div className="container-site">
+          <div className="rounded-[1.75rem] border border-teal/20 bg-teal-soft/40 p-6 md:p-8">
+            <p className="text-sm font-semibold tracking-[0.16em] text-teal uppercase">
+              Already have a positive pregnancy test?
+            </p>
+            <h2 className="font-display mt-2 text-3xl text-ink">
+              You did not miss your chance to prepare
+            </h2>
+            <p className="mt-4 max-w-3xl text-ink-soft">
+              Contact our office to arrange prenatal care. Keep taking prescribed medication unless
+              your clinician advises otherwise, and bring your questions to your first visit.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link href="/obstetrics" className="btn btn-primary">
+                Request a Prenatal Visit
+              </Link>
+              <Link href="/infertility" className="btn btn-secondary">
+                Fertility Concerns
+              </Link>
+            </div>
           </div>
         </div>
       </section>

@@ -16,8 +16,8 @@ export default function ProvidersPage() {
     <>
       <PageHero
         eyebrow="Providers"
-        title="Meet Dr. Yasir A. Mekki and Our Women’s Health Team"
-        description="Board certified obstetrics and gynecology care in Libertyville, led by an experienced physician and supported by a dedicated nurse practitioner."
+        title="Meet Our Team"
+        description="Board certified obstetrics and gynecology care in Libertyville with Dr. Yasir A. Mekki and Kelsey Augusta, FNP-C. Dr. Mekki speaks Spanish, Arabic, and English, and is in the office Monday, Tuesday, and Thursday."
       />
 
       <section className="section-pad pt-0 surface-white">
@@ -43,8 +43,11 @@ export default function ProvidersPage() {
               {site.doctor.title} · {site.doctor.surgeonTitle}
             </p>
             <div className="chip mt-4 bg-teal-soft font-semibold text-teal-deep">
-              Languages: {site.doctor.languages.join(" · ")}
+              Speaks Spanish · Arabic · English
             </div>
+            <p className="mt-3 text-sm text-ink-soft">
+              In the Libertyville office {site.doctorInOfficeDays}.
+            </p>
             <div className="mt-6 space-y-4 text-ink-soft">
               <p>
                 {site.doctor.fullName} is a Board Certified Obstetrician and Gynecologist with more

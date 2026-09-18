@@ -10,7 +10,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Obstetrics & Gynecology in Libertyville, IL | Dr. Yasir Mekki",
   description:
-    "Dr. Yasir A. Mekki is a board certified obstetrician gynecologist and experienced gynecologic surgeon providing obstetrics, pregnancy care, gynecology, and surgical care in Libertyville and Lake County. English, Arabic & Spanish.",
+    "Dr. Yasir A. Mekki is a board certified obstetrician gynecologist and experienced gynecologic surgeon providing obstetrics, pregnancy care, gynecology, and surgical care in Libertyville and Lake County. Dr. Mekki speaks Spanish, Arabic & English.",
   alternates: { canonical: "/" },
 };
 
@@ -18,11 +18,11 @@ const reasons = [
   "Board certified obstetrician gynecologist",
   "Decades of clinical experience",
   "Experienced gynecologic surgeon",
+  "Dr. Mekki speaks Spanish, Arabic, and English",
   "Pregnancy and gynecologic care under one roof",
   "High-risk pregnancy experience",
   "Serving Lake County since 1998",
-  "English, Arabic, and Spanish",
-  "Personalized physician-led care",
+  "Physician and nurse practitioner team",
   "Verified patient reviews",
 ];
 
@@ -51,7 +51,11 @@ const faqs = [
   {
     question: "What languages does Dr. Mekki speak?",
     answer:
-      "Dr. Yasir A. Mekki speaks English, Arabic, and Spanish, helping many Lake County families communicate comfortably during obstetric and gynecologic visits.",
+      "Dr. Yasir A. Mekki speaks Spanish, Arabic, and English, helping many Lake County families communicate comfortably during obstetric and gynecologic visits.",
+  },
+  {
+    question: "What days is Dr. Mekki in the office?",
+    answer: `${site.doctorInOfficeNote}`,
   },
   {
     question: "Does Dr. Mekki treat high-risk pregnancies?",
@@ -79,8 +83,8 @@ export default function Home() {
     <>
       <section className="relative min-h-[88vh] overflow-hidden">
         <ParallaxHeroImage
-          src="/images/hero.jpg"
-          alt="Women’s health and pregnancy care atmosphere at Alliance OB/GYN in Libertyville"
+          src="/images/hero-women-team.jpg"
+          alt="Women of all ages and backgrounds — women’s health care at Alliance OB/GYN in Libertyville"
         />
         <div className="pointer-events-none absolute inset-0 bg-black/55" />
         <div className="relative z-10 container-site flex min-h-[88vh] flex-col justify-end px-5 pb-16 pt-28 text-white md:justify-center md:pb-24">
@@ -91,11 +95,12 @@ export default function Home() {
           <p className="fade-up-delay-2 mt-5 max-w-2xl text-base text-white/90 md:text-lg">
             Dr. Yasir A. Mekki is a board certified obstetrician gynecologist and experienced
             gynecologic surgeon providing comprehensive obstetrics, pregnancy care, gynecology,
-            women’s health, and surgical care to patients in Libertyville and throughout Lake
-            County, Illinois. Care is available in English, Arabic, and Spanish.
+            women’s health, and surgical care in Libertyville and throughout Lake County. Dr. Mekki
+            speaks Spanish, Arabic, and English — and partners with nurse practitioner Kelsey
+            Augusta, FNP-C, to care for women at every stage of life.
           </p>
           <p className="fade-up-delay-2 mt-4 text-sm text-white/75 md:text-base">
-            {site.tagline}
+            {site.tagline} · Dr. Mekki is in the office {site.doctorInOfficeDays}.
           </p>
           <div className="fade-up-delay-2 mt-8 flex flex-wrap gap-3">
             <Link href="/contact#appointment" className="btn btn-sand">
@@ -108,65 +113,93 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-b border-[var(--line)] bg-white">
-        <div className="container-site grid items-stretch gap-3 px-5 py-5 text-sm md:grid-cols-4">
-          {[
-            "Board Certified Obstetrician Gynecologist",
-            "Experienced Gynecologic Surgeon",
-            "Decades of Experience",
-            "English · Arabic · Spanish",
-          ].map((item) => (
-            <span key={item} className="pill bg-teal-soft font-medium text-teal-deep">
-              {item}
-            </span>
-          ))}
-        </div>
-      </section>
-
       <section className="section-pad surface-paper">
-        <div className="container-site grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-          <div>
+        <div className="container-site">
+          <div className="max-w-3xl">
             <p className="text-sm font-semibold tracking-[0.16em] text-teal uppercase">
-              Why choose Dr. Mekki
+              Meet our team
             </p>
             <h2 className="font-display mt-3 text-4xl text-ink md:text-5xl">
-              Trusted obstetrics and gynecology for women in Lake County
+              Trusted women’s health care in Lake County
             </h2>
             <p className="mt-5 text-lg text-ink-soft">
-              Since {site.doctor.practiceSince}, {site.doctor.fullName} has cared for women and
-              families across Libertyville and Lake County as a board certified obstetrician
-              gynecologist and experienced gynecologic surgeon. Patients come to Alliance OB/GYN for
-              pregnancy care, well-woman exams, complex gynecologic concerns, and surgery — with a
-              physician who listens and explains.
+              Alliance OB/GYN brings together a board certified obstetrician gynecologist and a
+              family nurse practitioner specializing in women’s health — so patients have trusted
+              options for pregnancy care, well-woman visits, complex gynecologic concerns, and
+              surgery.
             </p>
-            <div className="chip mt-6 border border-teal/20 bg-white text-sm font-semibold text-teal-deep">
-              Languages: English · Arabic · Spanish
-            </div>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/providers" className="btn btn-primary">
-                Meet Dr. Mekki
-              </Link>
-              <Link href="/gynecologic-surgery" className="btn btn-secondary">
-                Learn More About Procedures and Surgeries
-              </Link>
-            </div>
           </div>
-          <div className="relative overflow-hidden rounded-[2rem] shadow-[var(--shadow)]">
-            <Image
-              src="/images/dr-yasir-mekki-obgyn-libertyville.png"
-              alt="Dr. Yasir Mekki, board certified obstetrician gynecologist in Libertyville, Illinois"
-              width={900}
-              height={1100}
-              className="h-full w-full object-cover"
-              priority
-            />
+
+          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+            <article className="overflow-hidden rounded-[1.75rem] border border-[var(--line)] bg-white shadow-[var(--shadow)]">
+              <div className="relative aspect-[4/5] sm:aspect-[5/4] lg:aspect-[4/5]">
+                <Image
+                  src="/images/dr-yasir-mekki-obgyn-libertyville.png"
+                  alt="Dr. Yasir Mekki, board certified obstetrician gynecologist in Libertyville, Illinois"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
+              </div>
+              <div className="p-6 md:p-8">
+                <p className="text-sm font-semibold tracking-[0.16em] text-teal uppercase">
+                  OB/GYN Physician
+                </p>
+                <h3 className="font-display mt-2 text-3xl text-ink">
+                  {site.doctor.fullName}, {site.doctor.credentials}
+                </h3>
+                <p className="mt-2 text-teal-deep">
+                  {site.doctor.title} · {site.doctor.surgeonTitle}
+                </p>
+                <p className="mt-4 text-ink-soft">
+                  Caring for women in Lake County since {site.doctor.practiceSince}. Dr. Mekki speaks{" "}
+                  <strong className="text-ink">Spanish</strong>, Arabic, and English, and sees
+                  patients in the Libertyville office {site.doctorInOfficeDays}.
+                </p>
+                <Link href="/providers" className="btn btn-primary mt-6">
+                  About Dr. Mekki
+                </Link>
+              </div>
+            </article>
+
+            <article className="overflow-hidden rounded-[1.75rem] border border-[var(--line)] bg-white shadow-[var(--shadow)]">
+              <div className="relative aspect-[4/5] sm:aspect-[5/4] lg:aspect-[4/5]">
+                <Image
+                  src="/images/kelsey-augusta-fnp-libertyville.png"
+                  alt="Kelsey Augusta, FNP-C, family nurse practitioner specializing in women’s health in Libertyville, Illinois"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+              <div className="p-6 md:p-8">
+                <p className="text-sm font-semibold tracking-[0.16em] text-teal uppercase">
+                  Nurse Practitioner
+                </p>
+                <h3 className="font-display mt-2 text-3xl text-ink">
+                  {site.nursePractitioner.fullName}
+                </h3>
+                <p className="mt-2 text-teal-deep">{site.nursePractitioner.title}</p>
+                <p className="mt-4 text-ink-soft">
+                  Kelsey provides comprehensive women’s health care at Alliance OB/GYN, including
+                  preventive visits, gynecologic evaluations, prenatal and postpartum support, and
+                  patient education for women throughout Lake County.
+                </p>
+                <Link href="/providers" className="btn btn-secondary mt-6">
+                  About Kelsey
+                </Link>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
       <section className="section-pad surface-white">
         <div className="container-site">
-          <h2 className="font-display text-3xl text-ink md:text-4xl">Why Women Choose Dr. Mekki</h2>
+          <h2 className="font-display text-3xl text-ink md:text-4xl">
+            Why Women Choose Alliance OB/GYN
+          </h2>
           <ul className="mt-8 grid items-stretch gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {reasons.map((reason) => (
               <li
@@ -313,7 +346,7 @@ export default function Home() {
       <Faq items={faqs} />
       <CtaBanner
         title="Schedule obstetrics or gynecology care in Libertyville"
-        text="Request an appointment with Dr. Yasir A. Mekki — board certified OB/GYN care in English, Arabic, and Spanish."
+        text={`Request an appointment with our team — Dr. Mekki speaks Spanish, Arabic, and English, and is in the office ${site.doctorInOfficeDays}.`}
       />
     </>
   );

@@ -23,7 +23,7 @@ export function Footer() {
           <p className="mt-3 max-w-md text-white/75">
             {site.doctor.fullName} is a board certified obstetrician gynecologist and experienced
             gynecologic surgeon serving women in Libertyville and Lake County since{" "}
-            {site.doctor.practiceSince}. Care available in English, Arabic, and Spanish.
+            {site.doctor.practiceSince}. Dr. Mekki speaks Spanish, Arabic, and English.
           </p>
           <div className="mt-6 space-y-1 text-white/85">
             <p>
@@ -102,6 +102,7 @@ export function Footer() {
               </li>
             ))}
           </ul>
+          <p className="mt-4 text-sm text-white/65">{site.doctorInOfficeNote}</p>
           <Link href="/contact#appointment" className="btn btn-sand mt-6 text-sm">
             Request an Appointment
           </Link>

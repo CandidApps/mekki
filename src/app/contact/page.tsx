@@ -166,6 +166,7 @@ export default function ContactPage() {
                   </li>
                 ))}
               </ul>
+              <p className="mt-4 text-sm text-ink-soft">{site.doctorInOfficeNote}</p>
             </div>
 
             <div className="rounded-[1.75rem] border border-teal/20 bg-teal-soft/40 p-6">

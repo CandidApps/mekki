@@ -115,14 +115,14 @@ export default function VotivaPage() {
       />
 
       <section className="section-pad pt-0 surface-white">
-        <div className="container-site max-w-3xl">
+        <div className="container-site">
           <p className="text-sm font-semibold tracking-[0.16em] text-teal uppercase">
             Your comfort comes first
           </p>
           <h2 className="font-display mt-2 text-3xl text-ink">
             You never have to minimize what you are experiencing
           </h2>
-          <p className="mt-4 text-ink-soft">
+          <p className="mt-4 max-w-3xl text-ink-soft">
             You set the pace of the conversation. We explain what we find, discuss reasonable
             options, and answer questions without pressure.
           </p>
@@ -130,12 +130,12 @@ export default function VotivaPage() {
       </section>
 
       <section className="section-pad surface-paper">
-        <div className="container-site max-w-3xl">
+        <div className="container-site">
           <p className="text-sm font-semibold tracking-[0.16em] text-teal uppercase">
             An in-office, energy-based procedure
           </p>
           <h2 className="font-display mt-2 text-3xl text-ink">What is Votiva?</h2>
-          <p className="mt-4 text-ink-soft">
+          <p className="mt-4 max-w-3xl text-ink-soft">
             Votiva uses a temperature-controlled radiofrequency applicator called FormaV to warm
             vaginal or vulvar tissue. It is a nonsurgical, elective procedure performed in the
             office. The technology is intended to support tissue quality and comfort for selected

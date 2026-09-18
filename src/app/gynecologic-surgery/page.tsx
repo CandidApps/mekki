@@ -140,14 +140,14 @@ export default function GynecologicSurgeryPage() {
       />
 
       <section className="section-pad pt-0 surface-white">
-        <div className="container-site max-w-3xl">
+        <div className="container-site">
           <p className="text-sm font-semibold tracking-[0.16em] text-teal uppercase">
             Care centered on you
           </p>
           <h2 className="font-display mt-2 text-3xl text-ink md:text-4xl">
             Start with the least invasive option that makes sense
           </h2>
-          <p className="mt-4 text-ink-soft">
+          <p className="mt-4 max-w-3xl text-ink-soft">
             Not every concern requires surgery. Your visit begins with listening, an exam when
             needed, and a review of your symptoms, test results, health history, and future
             pregnancy goals. Together, we can consider monitoring, medication, an in-office
